@@ -1,7 +1,7 @@
 var joinForm;
 var joinClick = function () {
     $s("join").blur();
-    if ( joinForm.validateForm() ) {
+    if ( joinForm.validateForm(true) ) {
         //alert("Please correct the errors on the page.");
     } else {
         document.location.href = '#top';
@@ -15,6 +15,13 @@ var joinClick = function () {
 
 var checkARIAErrors = function () {
 	console.log("checkErrors");
+	var error_count = 0;
+	for ( var fieldName in joinForm.fields ) {
+		if ($s(fieldName + "_error").classList.contains("error") && error_count === 0) {  //If _error div has the error class applied, then we've found at least one error, revalidate the form.
+			joinForm.validateForm(false);
+			error_count++;
+		}
+	}
 }
 
 var resetClick = function () {
@@ -61,6 +68,8 @@ window.onload = function () {
     $s("join").onclick = joinClick;
     $s("reset_form").onclick = resetClick;
 	$s("username").onblur = checkARIAErrors;
+	$s("password").onblur = checkARIAErrors;
+	$s("email").onblur = checkARIAErrors;
     
     var a = document.getElementsByClassName("fake");
     for(i=0 ; i<a.length ; i++){

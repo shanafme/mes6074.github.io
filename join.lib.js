@@ -236,12 +236,14 @@ JoinForm.prototype.clearError = function ( fieldName ) {
 }
 
 // Method to validate form
-JoinForm.prototype.validateForm = function () {
+JoinForm.prototype.validateForm = function (calledFromButtonClick) {
     var hasErrors = false;
     var error_count = 0;
     for ( var fieldName in this.fields ) {
         this.clearError(fieldName);
         try {
+			// Clear any existing alert, and then validate field.
+			$s(fieldName + "_error").setAttribute("role", "");
             this.validateField(fieldName, $s(fieldName).value );
         } catch (error) {
             error_count++;
@@ -261,7 +263,7 @@ JoinForm.prototype.validateForm = function () {
     	
     }
     error_count = 0;
-    if(hasErrors === false){
+    if(calledFromButtonClick && hasErrors === false){
     	$s("feedback").style.display = "inline-block";
         $s("feedback").firstChild.nodeValue = this.success;
         $s("feedback").className = "feedback";
