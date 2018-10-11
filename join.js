@@ -13,12 +13,6 @@ var joinClick = function () {
     }
 }
 
-function userNameFocusLost() {
-	for ( var fieldName in this.fields ) {
-		console.log(fieldName);
-	}
-}
-
 var resetClick = function () {
     $s("reset_form").blur();
     $s("join_form").reset();
