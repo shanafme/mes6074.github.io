@@ -225,7 +225,7 @@ JoinForm.prototype.setMessages = function () {
         	message = "";
         }
         $s(fieldName + "_error").firstChild.nodeValue = message;
-		$s(fieldName + "_error").attr('role','alert');
+		$s(fieldName + "_error").setAttribute("role", "alert");
     }
 }
 JoinForm.prototype.clearError = function ( fieldName ) {
