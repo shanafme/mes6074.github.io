@@ -14,7 +14,9 @@ var joinClick = function () {
 }
 
 function userNameFocusLost() {
-	console.log("Moved out of user name");
+	for ( var fieldName in this.fields ) {
+		console.log(fieldName);
+	}
 }
 
 var resetClick = function () {
