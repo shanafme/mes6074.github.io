@@ -69,7 +69,7 @@
                     'aria-valuemin': plugin.options.minValue, // set slider minimum value
                     'aria-valuemax': plugin.options.maxValue, // set slider maximum value
                     'aria-valuenow': plugin.options.minValue, // set slider current value
-                    'aria-describedby': id + '_instructions' // add description */
+                    'aria-labelledby': id + '_instructions' // add description */
 				})
 				.addClass('ik_knob')
 				.on('keydown', {'plugin': plugin}, plugin.onKeyDown)
