@@ -60,7 +60,7 @@ window.onload = function () {
     $s("country").onchange = setCountry;
     $s("join").onclick = joinClick;
     $s("reset_form").onclick = resetClick;
-	$s("username").onfocusout = checkARIAErrors;
+	$s("username").onblur = checkARIAErrors;
     
     var a = document.getElementsByClassName("fake");
     for(i=0 ; i<a.length ; i++){
