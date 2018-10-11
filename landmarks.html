@@ -34,8 +34,8 @@
 </div>
 
 <div class="logoutbar" role="search">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
-<div class="crumbcontainer" role="navigation">
-		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
+<div class="crumbcontainer" >
+		<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links" role="navigation">&nbsp;</div>
 </div>
 <div id="contentwrapper">
     <div id="lrg_content">
@@ -85,7 +85,7 @@
 <dt>
 <label for="username">Username:</label><img src="images/required.gif"  alt="Required Field" class="img" />
 </dt>
-<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error"><br />
+<dd><input id="username" class="input" type="text" value="" maxlength="30" size="20" name="username"  aria-required="true" aria-describedby="username_error" onfocusout="userNameFocusLost()"><br />
         <span id="username_error">&nbsp;</span><br />
 </dd>
 <dt>

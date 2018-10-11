@@ -13,6 +13,10 @@ var joinClick = function () {
     }
 }
 
+function userNameFocusLost() {
+	console.log("Moved out of user name");
+}
+
 var resetClick = function () {
     $s("reset_form").blur();
     $s("join_form").reset();

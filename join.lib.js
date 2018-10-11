@@ -266,7 +266,7 @@ JoinForm.prototype.validateForm = function () {
         $s("feedback").firstChild.nodeValue = this.success;
         $s("feedback").className = "feedback";
        // Uncomment the next line to add an ARIA alert to the feedback message
-       // $s("feedback").setAttribute("role", "alert");
+       $s("feedback").setAttribute("role", "alert");
     }
     return hasErrors;
 }
