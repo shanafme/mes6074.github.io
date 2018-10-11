@@ -2,7 +2,7 @@ var joinForm;
 var joinClick = function () {
     $s("join").blur();
     if ( joinForm.validateForm() ) {
-        alert("Please correct the errors on the page.");
+        //alert("Please correct the errors on the page.");
     } else {
         document.location.href = '#top';
         $s("feedback").focus();
@@ -11,6 +11,10 @@ var joinClick = function () {
         //    },5000
         //);
     }
+}
+
+var checkARIAErrors = function () {
+	console.log("checkErrors");
 }
 
 var resetClick = function () {
@@ -56,6 +60,7 @@ window.onload = function () {
     $s("country").onchange = setCountry;
     $s("join").onclick = joinClick;
     $s("reset_form").onclick = resetClick;
+	$s("username").onfocusout = checkARIAErrors;
     
     var a = document.getElementsByClassName("fake");
     for(i=0 ; i<a.length ; i++){

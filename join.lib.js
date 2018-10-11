@@ -270,11 +270,3 @@ JoinForm.prototype.validateForm = function () {
     }
     return hasErrors;
 }
-
-function userNameFocusLost() {
-	console.log("New Log");
-	for ( var fieldName in this.fields ) {
-		console.log(fieldName);
-	}
-}
-
